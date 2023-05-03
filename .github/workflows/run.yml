@@ -23,6 +23,6 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           # Artifact name 
-          name: # optional
+          name: UNIT-TESTING
           # Destination path
-          path: # optional
+          path: ./unit-testing
