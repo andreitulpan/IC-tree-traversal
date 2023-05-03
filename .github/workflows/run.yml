@@ -21,7 +21,7 @@ jobs:
 
       - name: Actions for Discord
         env:
-          DISCORD_WEBHOOK: ${{ https://discord.com/api/webhooks/1103325690289471488/7cFXrEX_ioph9B0kAjBE9vY55p-UMTRWUg1lJC70bfC3S4GOIumxPdWdvVe5pFvL2hQE }}
+          DISCORD_WEBHOOK: https://discord.com/api/webhooks/1103325690289471488/7cFXrEX_ioph9B0kAjBE9vY55p-UMTRWUg1lJC70bfC3S4GOIumxPdWdvVe5pFvL2hQE
         uses: Ilshidur/action-discord@0.3.2
         with:
           args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
