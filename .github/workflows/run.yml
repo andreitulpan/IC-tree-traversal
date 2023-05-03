@@ -1,4 +1,4 @@
-name: 🚀 Run-v2
+name: 🚀 Run
 
 on:
   pull_request:
@@ -17,12 +17,4 @@ jobs:
       - name: 🚀 Run
         shell: bash
         run: |
-          python3 main.py
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          # Artifact name 
-          name: UNIT-TESTING
-          # Destination path
-          path: ./unit-testing
+          pytest tree.py
