@@ -1,4 +1,5 @@
 from node import Node
+import unittest
 
 
 class Tree:
@@ -62,27 +63,72 @@ class Tree:
             return self._find(data, node.right)
 
     def deleteTree(self):
-        # TODO 1
+        """Method for deleting tree"""
         self.root = None
 
     def printTree(self):
-        # TODO 1
+        """Method for printing tree"""
         if self.root is not None:
             self._printInorderTree(self.root)
 
     def _printInorderTree(self, node):
-        # TODO 1
+        """Method for printing the tree inorder
+
+        Args:
+            node (int): node
+
+        Returns:
+            None
+        """
         if node is not None:
             self._printInorderTree(node.left)
             print(str(node.data) + ' ')
             self._printInorderTree(node.right)
 
     def _printPreorderTree(self, node):
-        # TODO 2
-        pass
+        """Method for printing the tree preorder
+
+        Args:
+            node (int): node
+
+        Returns:
+            None
+        """
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printPreorderTree(node.left)
+            self._printPreorderTree(node.right)
 
     def _printPostorderTree(self, node):
-        # TODO 2
-        pass
+        """Method for printing the tree outorder
+
+        Args:
+            node (int): node
+
+        Returns:
+            None
+        """
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printPostorderTree(node.left)
+            self._printPostorderTree(node.right)
+
+class TestMyTreeFind(unittest.TestCase):
+    def setUp(self):
+        # Create a new MyTree instance and add some data to it
+        self.tree = Tree()
+        self.tree.add(5)
+        self.tree.add(3)
+        self.tree.add(7)
+
+    def test_find_existing_data(self):
+        # Test that _find() returns the correct node for existing data
+        node = self.tree._find(3, self.tree.root)
+        self.assertEqual(node.data, 3)
+
+    def test_find_nonexistent_data(self):
+        # Test that _find() returns None for nonexistent data
+        node = self.tree._find(4, self.tree.root)
+        self.assertIsNone(node)
 
 
