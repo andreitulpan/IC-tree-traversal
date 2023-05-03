@@ -1,4 +1,4 @@
-name: 🚀 Run-Baby
+name: 🚀 Run-Baby2
 
 on:
   pull_request:
@@ -17,4 +17,4 @@ jobs:
       - name: 🚀 Run
         shell: bash
         run: |
-          pytest tree.py
+          python3 tree.py
