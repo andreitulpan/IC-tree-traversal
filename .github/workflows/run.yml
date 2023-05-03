@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🚀 Run
+      - name: 🚀 Run-v3
         shell: bash
         run: |
           python3 main.py
