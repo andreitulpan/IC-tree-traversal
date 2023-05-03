@@ -18,11 +18,3 @@ jobs:
         shell: bash
         run: |
           pytest tree.py
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          # Artifact name 
-          name: UNIT-TESTING
-          # Destination path
-          path: tree.py
